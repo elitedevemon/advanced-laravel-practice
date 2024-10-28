@@ -7,7 +7,7 @@ Route::get('/', function () {
 });
 
 //optional parameter route
-Route::get('post/{id?}', function (string $id=null) {
+Route::get('post/{id?}', function (string $id = null) {
   if (!empty($id)) {
     return $id;
   }
@@ -15,9 +15,15 @@ Route::get('post/{id?}', function (string $id=null) {
 });
 
 //parameter type selection
-Route::get('post/slug/{id?}', function(string $id=null){
+Route::get('post/slug/{id?}', function (string $id = null) {
   if (!empty($id)) {
     return $id;
   }
   return "No id found";
 })->whereAlpha('id');
+
+Route::get('test', function () {
+  return "this is about page";
+});
+
+Route::redirect("about", 'test');
