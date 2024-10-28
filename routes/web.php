@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ForeachLoopController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -27,3 +28,6 @@ Route::get('test', function () {
 });
 
 Route::redirect("about", 'test');
+
+// foreach loop variable check
+Route::get('loops', ForeachLoopController::class);
