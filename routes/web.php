@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AbortIfController;
 use App\Http\Controllers\ForeachLoopController;
 use Illuminate\Support\Facades\Route;
 
@@ -31,3 +32,9 @@ Route::redirect("about", 'test');
 
 // foreach loop variable check
 Route::get('loops', ForeachLoopController::class);
+
+// javascript testing route
+Route::view('js', 'js_testing');
+
+// abort if function check
+Route::get('/abort/{id}', AbortIfController::class);
