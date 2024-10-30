@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AbortIfController;
 use App\Http\Controllers\ForeachLoopController;
+use App\Http\Controllers\TeacherController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -38,3 +39,6 @@ Route::view('js', 'js_testing');
 
 // abort if function check
 Route::get('/abort/{id}', AbortIfController::class);
+
+//checking the multiple where condition into one where.
+Route::get('where-condition', TeacherController::class);
